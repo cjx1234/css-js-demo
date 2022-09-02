@@ -1,0 +1,199 @@
+body{
+    background-color: #ebd8d0;
+    text-align: center;
+    height: 100%;
+    margin: 0px;
+}
+
+#container{
+    margin: 120px auto;
+    position: relative;
+    height: 230px;
+    width: 755px;
+}
+
+#container div{
+    position: absolute;
+}
+
+#container div:before,
+#container div:after{
+    content: '';
+    position: absolute;
+    display: block;
+}
+
+.head{
+    background: #a78a7f;
+    height: 70px;
+    width: 152px;
+    bottom: 32px;
+    left: 143px;
+    z-index: 10;
+    border-radius: 100%;
+}
+
+.head:before{
+    height: 122px;
+    width: 122px;    
+    bottom: 0px;
+    left: 54px;
+    border-radius: 90% 50% 90% 90%;
+    transform: rotate(226deg);
+    background: #594a41;
+    z-index: 199;
+}
+
+.muzzle{
+    height: 70px;
+    width: 152px;
+    bottom: 30px;
+    left: 143px;
+    z-index: 5;
+    border-radius: 100%;
+    background: #a78a7f;
+}
+
+.ears{
+    height: 42px;
+    width: 42px;
+    border-radius: 100%;
+    left: 220px;
+    top: 60px;
+    box-shadow: 34px -8px 0 0 #594a41;
+    background: #594a41;
+}
+
+.body{
+    height: 150px;
+    width: 330px;
+    left: 228px;
+    bottom: 29px;
+    border-radius: 50%;
+    background: #594a41;
+}
+
+.paws-front{
+    height: 50px;
+    width: 100px;
+    bottom: 14px;
+    left: 272px;
+    z-index: 15;
+    border-radius: 80% 22% 55% 50% / 55% 22% 80% 50%;
+    transform: rotate(11deg);
+    background: #a78a7f;
+}
+
+.paws-back{
+    height: 52px;
+    width: 100px;
+    bottom: 29px;
+    left: 420px;
+    border-top-left-radius: 100%;
+    background: #a78a7f;
+}
+
+.paws-back:after{
+    height: 52px;
+    width: 36px;
+    border-radius: 100%;
+    left: 80px;
+    background: #a78a7f;
+}
+
+.details{
+    width: 25px;
+    height: 25px;
+    left: 135px;
+    bottom: 66px;
+    border-radius: 100%;
+    box-shadow: 100px 0 0 #ad5d4e;
+    z-index: 20;
+    background: #221e22;
+}
+
+.details:after{
+    width: 22px;
+    height: 22px;
+    border-bottom: 5px solid #221e22;
+    border-top: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 50%;
+    left: 68px;
+    top: -30px;
+}
+
+.tail{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: #594a41;
+    left: 490px;
+    top: 60px;
+}
+
+/* 睡觉 */
+.sleep{
+    height: 90px;
+    width: 80px;
+    position: absolute;
+    left: 80px;
+    top: 30px;
+    font-size: 55px;
+}
+
+.sleep span{
+    width: 15px;
+    height: 15px;
+    display: block;
+    font-family: arial;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    background: #221e22;
+    /* 动画属性linear匀速  infinite 循环*/
+    animation: zz 3s linear infinite;
+}
+
+.sleep .s1{
+    margin-left: 180px;
+    margin-top: -40px;
+}
+
+.sleep .s2{
+    margin-left: 120px;
+    margin-top: -5px;
+}
+
+.sleep .s3{
+    margin-left: 60px;
+    margin-top: 5px;
+}
+
+.sleep .s4{
+    margin-left: 0px;
+    margin-top: 12px;
+}
+
+.sleep .s5{
+    margin-left: -5px;
+    margin-top: 52px;
+}
+
+@keyframes zz{
+    0%{
+        opacity: 0;
+        transform: scale3d(.2,.2,.2)rotate(-20deg);
+    }
+    50%{
+        opacity: 1;
+    }
+    80%{
+        transform: translateY(-30px)translateX(20px)rotate(10deg);
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
