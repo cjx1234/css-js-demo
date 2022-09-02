@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f5f7;
+}
+.icon-nav{
+    list-style: none;
+    background-color: #231f2e;
+    padding: 0 12px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 10px 50px rgba(6, 5, 59, 0.25);
+}
+.icon-nav li{
+    margin-top: 12px;
+}
+.icon-nav li.split{
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 80px;
+    padding-top: 20px;
+}
+.icon-nav a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+.icon-nav a i{
+    font-size: 20px;
+}
+.icon-nav a span{
+    position: absolute;
+    background-color: #fa5c51;
+    font-size: 15px;
+    white-space: nowrap;
+    padding: 8px 16px;
+    border-radius: 6px;
+    left: calc(100% + 24px);
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: center left;
+    transition: 0.15s ease;
+}
+.icon-nav a span::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background-color: #fa5c51;
+    left: -5px;
+    top: 50%;
+    border-radius: 3px;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.icon-nav a:focus,
+.icon-nav a:active,
+.icon-nav a:hover{
+    background-color: #fa5c51;
+    outline: none;
+}
+.icon-nav a:focus span,
+.icon-nav a:active span,
+.icon-nav a:hover span{
+    opacity: 1;
+    transform: scale(1);
+}
