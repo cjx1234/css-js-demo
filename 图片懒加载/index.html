@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片懒加载</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+
+    }
+    img{
+        display: block;
+    }
+</style>
+<body>
+  <input type="week">
+  <input type="url">
+  <input type="color">
+  <input type="button">
+  <input type="checkbox">
+  <input type="time">
+  <input type="date">
+  <input type="submit">
+  <input type="file">
+  <input type="datetime-local">
+    <div class="demo">
+        <img         
+          data-src="https://cdn.pixabay.com/photo/2021/08/24/15/38/sand-6570980_960_720.jpg"
+          alt="1"
+        />
+        <img
+          data-src="https://cdn.pixabay.com/photo/2013/02/21/19/06/drink-84533_960_720.jpg"
+          alt="2"
+        />
+        <img
+          data-src="https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_960_720.jpg"
+          alt="3"
+        />
+        <img
+          data-src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+          alt="4"
+        />
+        <img
+          data-src="https://cdn.pixabay.com/photo/2017/03/26/21/54/yoga-2176668_960_720.jpg"
+          alt="5"
+        />
+      </div>
+</body>
+<script>
+  const demo=document.querySelectorAll('img')
+  function lazy(){
+    for(let elem of demo){
+    if(elem.getBoundingClientRect().top<document.documentElement.clientHeight){
+      if(elem.dataset.src && elem.src==""){
+        elem.src=elem.dataset.src
+      }
+    }
+    }
+  }
+
+  function dealy(h,fn){
+    let time;
+    return function(){
+      if(!time){
+      
+      time= setTimeout(()=>{
+        time=null
+        fn()
+      },h)
+    }
+    }
+  }
+
+  lazy()
+  window.addEventListener("scroll",dealy(500,lazy));
+</script>
+</html>
